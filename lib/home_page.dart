@@ -1,42 +1,7 @@
 import 'package:flutter/material.dart';
 import 'web_bar.dart';
+import 'dart:convert';
 import 'web_body.dart';
-
-// class MyCustomWidget extends StatefulWidget {
-//   const MyCustomWidget({super.key});
-
-//   @override
-//   _MyCustomWidgetState createState() => _MyCustomWidgetState();
-// }
-
-// class _MyCustomWidgetState extends State<MyCustomWidget>
-//     with TickerProviderStateMixin {
-//   bool expanded = true;
-//   late AnimationController controller;
-
-//   @override
-//   void initState() {
-//     super.initState();
-//     controller = AnimationController(
-//       vsync: this,
-//       duration: const Duration(milliseconds: 1000),
-//       reverseDuration: const Duration(milliseconds: 500),
-//     );
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return IconButton(
-//         icon:
-//             AnimatedIcon(icon: AnimatedIcons.menu_close, progress: controller),
-//         onPressed: () {
-//           setState(() {
-//             expanded ? controller.forward() : controller.reverse();
-//             expanded = !expanded;
-//           });
-//         });
-//   }
-// }
 
 class CleverApp extends StatefulWidget {
   const CleverApp({super.key});
@@ -80,6 +45,38 @@ class _CleverAppState extends State<CleverApp> {
                   child: const WebBody(),
                 ),
               ],
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.clear),
+              onPressed: () {},
+            ),
+            Card(
+              shape: const CircleBorder(),
+              elevation: 5,
+              child: Expanded(
+                child: TextField(
+                  decoration:
+                      const InputDecoration(hintText: 'Enter your text here'),
+                  onSubmitted: (String value) {
+                    Map<String, dynamic> data = {
+                      'text': value,
+                    };
+                    String json = jsonEncode(data);
+                    print(json);
+                  },
+                ),
+              ),
+            ),
+            IconButton(
+              icon: const Icon(Icons.save),
+              onPressed: () {},
             ),
           ],
         ),

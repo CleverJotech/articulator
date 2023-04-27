@@ -22,14 +22,7 @@ class Research extends StatefulWidget {
 class _ResearchState extends State<Research> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Research'),
-      ),
-      body: Column(
-        children: const [],
-      ),
-    );
+    return ListView();
   }
 }
 

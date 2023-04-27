@@ -4,7 +4,7 @@ PreferredSize webBar(Size screenSize) {
   return PreferredSize(
     preferredSize: Size(screenSize.width, 690),
     child: Container(
-      color: const Color.fromARGB(150, 241, 218, 66),
+      color: const Color.fromARGB(177, 176, 229, 247),
       child: Padding(
         padding: const EdgeInsets.all(20),
         child: Row(
@@ -50,13 +50,14 @@ PreferredSize webBar(Size screenSize) {
                         Color.fromRGBO(18, 51, 217, 1),
                         Color.fromRGBO(215, 0, 253, 1),
                       ]).createShader(
-                          const Rect.fromLTRB(10.0, 20.0, 200.0, 10.0))),
+                          const Rect.fromLTRB(10.0, 20.0, 300.0, 10.0))),
               ),
             ]),
             Expanded(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  SizedBox(width: screenSize.width / 1.4),
                   InkWell(
 //                        onHover:,
                     onTap: () {},
@@ -72,8 +73,8 @@ PreferredSize webBar(Size screenSize) {
                       ),
                     ),
                   ),
+                  SizedBox(width: screenSize.width / 40),
                   InkWell(
-//                        onHover:,
                     onTap: () {},
                     hoverColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -87,7 +88,6 @@ PreferredSize webBar(Size screenSize) {
                       ),
                     ),
                   ),
-                  SizedBox(width: screenSize.width / 16),
                 ],
               ),
             ),
